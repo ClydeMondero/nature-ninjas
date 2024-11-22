@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div>
+  <div class="mx-auto flex flex-col items-center">
+    <!-- Image Section -->
+    <div id="hero-image" class="w-full lg:w-1/2 flex justify-center hover:scale-105 z-0 transition-all ease-in-out">
+      <img src="{% static 'assets/hero.gif' %}" alt="Chess Characters" class="h-1/2">
+    </div>
+    <!-- Text Section -->
+    <div class="w-full bg-green-50 text-center mb-10 py-10 flex flex-col items-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-green-700 mb-4 max-w-2xl">
+        Ice is Melting, What's Next?
+      </h1>
+      <p class="text-gray-600 text-lg md:text-xl mb-6 max-w-2xl">
+        Nature Ninjas is a fun and interactive way to teach kids about climate change and saving the planet.
+      </p>
+      <button class="px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-400 transition">
+        Learn More
+      </button>
+    </div>
+{% endblock %}
+

@@ -48,34 +48,21 @@ pip install -r requirements.txt
 Ensure the database is initialized and ready by running the migrations:
 
 ```bash
+cd natureNinjas
 python manage.py migrate
+```
+### 6. Install Tailwind
+Install tailwind and other npm dependencies
+```
+npm install
 ```
 
 ### 6. Start the Development Server
 
-Run the Django development server to serve the project locally:
+Run the Django development server to serve the project locally, make sure you're in *natureNinjas* directory:
 
 ```bash
-python manage.py runserver
+npm run start
 ```
 
 Visit the following URL to access the project: [http://127.0.0.1:8000](http://127.0.0.1:8000).
-
-## Project Structure
-
-```plaintext
-nature-ninjas/
-├── config/               # Django settings and configuration
-│   ├── settings.py       # Project settings
-│   ├── urls.py           # URL definitions
-│   ├── wsgi.py           # WSGI application for deployment
-│   ├── asgi.py           # ASGI application (if using async features)
-├── core/                 # Main app for project functionality
-│   ├── models.py         # Database models
-│   ├── views.py          # Request handlers
-│   ├── urls.py           # App-specific routes
-│   ├── tests.py          # Unit tests
-├── manage.py             # Django command-line utility
-├── requirements.txt      # Project dependencies
-├── .gitignore            # Files and folders ignored by Git
-```

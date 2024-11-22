@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Django Site{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+   </style>
+  </head>
+  <body class="h-dvh flex flex-col">
+   <header id="header" class="w-full fixed top-0 text-green-600 p-12 h-32">
+  <nav class="h-full flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <img src="{% static 'assets/logo-landscape.png' %}" alt="Logo" class="h-20">
+    </div>
+    <ul class="h-full flex items-center gap-10">
+      <li class="h-full flex items-center">
+        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'home' %}">
+          <i class="fas fa-home fa-xl"></i>
+          <span class="text-xl">Home</span>
+        </a>
+      </li>
+      <li class="h-full flex items-center">
+        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'articles' %}">
+          <i class="fas fa-newspaper fa-xl"></i>
+          <span class="text-xl">Articles</span>
+        </a>
+      </li>
+      <li class="h-full flex items-center">
+        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'activities' %}">
+          <i class="fas fa-running fa-xl"></i>
+          <span class="text-xl">Activities</span>
+        </a>
+      </li>
+      <li class="h-full flex items-center">
+        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'multimedia' %}">
+          <i class="fas fa-photo-video fa-xl"></i>
+          <span class="text-xl">Multimedia</span>
+        </a>
+      </li>
+      <li class="h-full flex items-center">
+        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'about' %}">
+          <i class="fas fa-info-circle fa-xl"></i>
+          <span class="text-xl">About</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+    <main class="mt-32 flex-1">
+      {% block content %}
+      <!-- Page-specific content will go here -->
+      {% endblock %}
+    </main>
+
+    <footer class="w-full sticky b-0 border-t-2 text-gray-700 py-4">
+    <!-- Logo Section -->
+    <div class="flex items-center justify-center">
+      <img src="{% static 'assets/logo.png' %}" alt="Logo" class="h-10 mr-4">
+      <span class="text-sm">Copyright © 2024 Nature Ninjas</span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0dcc68427e.js" crossorigin="anonymous"></script>
+    {% if settings.DEBUG %}
+<script src="http://127.0.0.1:8000/__reload__/reload.js"></script>
+{% endif %}
+<script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

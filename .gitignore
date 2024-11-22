@@ -10,6 +10,10 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Node.js modules
+node_modules/
+
 # System-specific files
 .DS_Store
 .env
+

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+ font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e6f7e6; /* Pastel green color for the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b3e6b3; /* Pastel green color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #99d699; /* Darker pastel green color of the thumb when hovered */
+}
+
+#header {
+  transform: translateY(0); /* Default: visible */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+#header.hidden {
+  transform: translateY(-100%); /* Hide by moving it upward */
+}
