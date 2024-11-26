@@ -1,29 +1,90 @@
-{% extends 'base.html' %}
-{% load static%}
-
+{% extends "base.html" %}
+{% load static %}
 {% block title %}
-Home Page
-{% endblock %}
-
+  Home Page
+{% endblock title %}
 {% block content %}
-<!-- Hero Section -->
-<div>
-  <div class="mx-auto flex flex-col items-center">
-    <!-- Image Section -->
-    <div id="hero-image" class="w-full lg:w-1/2 flex justify-center hover:scale-105 z-0 transition-all ease-in-out">
-      <img src="{% static 'assets/hero.gif' %}" alt="Chess Characters" class="h-1/2">
+  <!-- Hero Section -->
+  <div class="relative w-full flex justify-center">
+    <!-- Hero Image -->
+    <div id="hero-image" class="w-full h-[750px] relative">
+      <img src="{% static 'assets/hero.jpg' %}"
+           alt="Climate Hero Image"
+           class="w-full h-full object-cover rounded-lg shadow-md" />
+      <!-- Hero Text Overlay -->
+      <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-green-600 via-transparent to-transparent text-gray-100 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 max-w-2xl">🧊 Ice is Melting, What's Next?</h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl">
+          Nature Ninjas is a fun and interactive way to teach kids about climate
+          change and saving the planet!
+        </p>
+        <button class="px-6 py-3 bg-yellow-400 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-yellow-300 transition">
+          🚀 Let's Learn!
+        </button>
+      </div>
     </div>
-    <!-- Text Section -->
-    <div class="w-full bg-green-50 text-center mb-10 py-10 flex flex-col items-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-green-700 mb-4 max-w-2xl">
-        Ice is Melting, What's Next?
-      </h1>
-      <p class="text-gray-600 text-lg md:text-xl mb-6 max-w-2xl">
-        Nature Ninjas is a fun and interactive way to teach kids about climate change and saving the planet.
-      </p>
-      <button class="px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-400 transition">
-        Learn More
-      </button>
+  </div>
+  <!-- Featured Articles Section -->
+  <div class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-green-700 text-center mb-8">📰 Featured Articles</h2>
+      {% if articles %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {% for article in articles %}
+            <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform">
+              <img src="{{ article.image.url }}"
+                   alt="{{ article.title }}"
+                   class="w-full h-48 object-cover" />
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-green-700 mb-2">{{ article.title }}</h3>
+                <p class="text-gray-600 text-sm mb-4">{{ article.content|truncatewords:20 }}</p>
+                <a href="{% url 'article_detail' article.slug %}"
+                   class="text-yellow-400 font-medium hover:underline">📖 Read More →</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-center text-gray-500">No articles available at the moment.</p>
+      {% endif %}
     </div>
-{% endblock %}
-
+  </div>
+  <!-- Multimedia Section -->
+  <div class="bg-gray-100 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-blue-600 text-center mb-8">🎥 Explore Multimedia</h2>
+      {% if multimedia %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {% for media in multimedia %}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform">
+              <img src="{{ media.image.url }}"
+                   alt="{{ media.title }}"
+                   class="w-full h-48 object-cover" />
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-blue-600 mb-2">{{ media.title }}</h3>
+                <p class="text-gray-600 text-sm mb-4">{{ media.description|truncatewords:20 }}</p>
+                <a href="{{ media.link }}"
+                   class="text-yellow-400 font-medium hover:underline"
+                   target="_blank">🎬 Watch Now →</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-center text-gray-500">No multimedia available at the moment.</p>
+      {% endif %}
+    </div>
+  </div>
+  <!-- Call to Action Section -->
+  <div class="bg-green-100 py-10 text-center">
+    <h3 class="text-2xl font-bold text-green-700 mb-4">🌱 Join the Climate Change Mission!</h3>
+    <p class="text-gray-600 text-lg mb-6">
+      Participate in activities, learn through games, and explore exciting
+      climate-related content.
+    </p>
+    <a href="{% url 'activities' %}"
+       class="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-400 transition">
+      🌟 Get Started
+    </a>
+  </div>
+{% endblock content %}
