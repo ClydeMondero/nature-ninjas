@@ -7,4 +7,5 @@ urlpatterns = [
     path('activities/', views.activities, name='activities'),  # Activities page
     path('articles/', views.articles, name='articles'),  # Articles page
     path('multimedia/', views.multimedia, name='multimedia'),  # Multimedia page
+    path('contact/', views.contact, name='contact'),  # Contact Us Page
 ]

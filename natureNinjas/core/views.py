@@ -16,3 +16,6 @@ def articles(request):
 
 def multimedia(request):
     return render(request, 'multimedia.html')
+
+def contact(request):
+    return render(request, 'contact.html')  
