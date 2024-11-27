@@ -34,3 +34,9 @@
 #header.hidden {
   transform: translateY(-100%); /* Hide by moving it upward */
 }
+
+#hero-image{
+  background-image: url(../assets/hero.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}

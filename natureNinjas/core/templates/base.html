@@ -3,72 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}My Django Site{% endblock %}</title>
+    <title>
+      {% block title %}
+        Nature Ninjas - Let's Save the Planet!
+      {% endblock title %}
+    </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/output.css' %}" />
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
-   </style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');</style>
   </head>
-  <body class="h-dvh flex flex-col">
-   <header id="header" class="w-full fixed top-0 text-green-600 p-12 h-32">
-  <nav class="h-full flex justify-between items-center">
-    <div class="flex items-center gap-2">
-      <img src="{% static 'assets/logo-landscape.png' %}" alt="Logo" class="h-20">
+  <body class="h-dvh bg-gray-50 text-gray-800">
+    <div class="min-h-screen flex flex-col">
+      <!-- Header Section -->
+      <header id="header"
+              class="w-full h-25 fixed top-0 bg-gradient-to-r from-white to-green-600 text-white p-6 shadow-md z-50">
+        <nav class="h-full flex justify-between items-center">
+          <!-- Logo Section -->
+          <div class="flex items-center gap-4">
+            <img src="{% static 'assets/logo-landscape.png' %}"
+                 alt="Nature Ninjas Logo"
+                 class="h-16">
+          </div>
+          <!-- Navigation Links -->
+          <ul class="h-full flex items-center gap-10 text-lg font-semibold">
+            <li>
+              <a class="flex items-center gap-2 hover:text-yellow-300"
+                 href="{% url 'home' %}">
+                <i class="fas fa-home"></i> <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a class="flex items-center gap-2 hover:text-yellow-300"
+                 href="{% url 'articles' %}">
+                <i class="fas fa-newspaper"></i> <span>Articles</span>
+              </a>
+            </li>
+            <li>
+              <a class="flex items-center gap-2 hover:text-yellow-300"
+                 href="{% url 'activities' %}">
+                <i class="fas fa-gamepad"></i> <span>Activities</span>
+              </a>
+            </li>
+            <li>
+              <a class="flex items-center gap-2 hover:text-yellow-300"
+                 href="{% url 'multimedia' %}">
+                <i class="fas fa-video"></i> <span>Multimedia</span>
+              </a>
+            </li>
+            <li>
+              <a class="flex items-center gap-2 hover:text-yellow-300"
+                 href="{% url 'about' %}">
+                <i class="fas fa-info-circle"></i> <span>About</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- Main Content -->
+      <main class="mt-28 flex-grow">
+        {% block content %}<!-- Page-specific content will go here -->{% endblock %}
+      </main>
+      <!-- Footer Section -->
+      <footer class="w-full bg-green-900 text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo Section -->
+            <div class="flex items-center mb-4 md:mb-0">
+              <img src="{% static 'assets/logo.png' %}"
+                   alt="Nature Ninjas Logo"
+                   class="h-12 mr-4" />
+              <div>
+                <h2 class="text-xl font-bold">Nature Ninjas</h2>
+                <p class="text-sm text-gray-200">🌍 Empowering Kids to Save Our Planet!</p>
+              </div>
+            </div>
+            <!-- Navigation Links -->
+            <div class="flex-1 flex flex-wrap justify-center gap-16 text-sm">
+              <!-- Links -->
+              <div>
+                <h3 class="font-semibold mb-2">Explore</h3>
+                <ul>
+                  <li>
+                    <a href="{% url 'home' %}" class="hover:text-gray-300">🏠 Home</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'articles' %}" class="hover:text-gray-300">📰 Articles</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'activities' %}" class="hover:text-gray-300">🎮 Activities</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'multimedia' %}" class="hover:text-gray-300">🎥 Multimedia</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- More -->
+              <div>
+                <h3 class="font-semibold mb-2">About Us</h3>
+                <ul>
+                  <li>
+                    <a href="#" class="hover:text-gray-300">📖 About</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:text-gray-300">📞 Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:text-gray-300">🔒 Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="hover:text-gray-300">❓ FAQ</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Social Media -->
+              <div>
+                <h3 class="font-semibold mb-2">Follow Us</h3>
+                <div class="flex gap-4">
+                  <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter fa-lg"></i></a>
+                  <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f fa-lg"></i></a>
+                  <a href="#" class="hover:text-red-500"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Footer Bottom -->
+          <div class="mt-8 text-center text-gray-300 text-xs">
+            <p>🌱 Copyright © Nature Ninjas 2024. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
-    <ul class="h-full flex items-center gap-10">
-      <li class="h-full flex items-center">
-        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'home' %}">
-          <i class="fas fa-home fa-xl"></i>
-          <span class="text-xl">Home</span>
-        </a>
-      </li>
-      <li class="h-full flex items-center">
-        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'articles' %}">
-          <i class="fas fa-newspaper fa-xl"></i>
-          <span class="text-xl">Articles</span>
-        </a>
-      </li>
-      <li class="h-full flex items-center">
-        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'activities' %}">
-          <i class="fas fa-running fa-xl"></i>
-          <span class="text-xl">Activities</span>
-        </a>
-      </li>
-      <li class="h-full flex items-center">
-        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'multimedia' %}">
-          <i class="fas fa-photo-video fa-xl"></i>
-          <span class="text-xl">Multimedia</span>
-        </a>
-      </li>
-      <li class="h-full flex items-center">
-        <a class="flex items-center gap-1 hover:text-green-400" href="{% url 'about' %}">
-          <i class="fas fa-info-circle fa-xl"></i>
-          <span class="text-xl">About</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
-    <main class="mt-32 flex-1">
-      {% block content %}
-      <!-- Page-specific content will go here -->
-      {% endblock %}
-    </main>
-
-    <footer class="w-full sticky b-0 border-t-2 text-gray-700 py-4">
-    <!-- Logo Section -->
-    <div class="flex items-center justify-center">
-      <img src="{% static 'assets/logo.png' %}" alt="Logo" class="h-10 mr-4">
-      <span class="text-sm">Copyright © 2024 Nature Ninjas</span>
-    </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/0dcc68427e.js" crossorigin="anonymous"></script>
-    {% if settings.DEBUG %}
-<script src="http://127.0.0.1:8000/__reload__/reload.js"></script>
-{% endif %}
-<script src="{% static 'js/script.js' %}"></script>
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/0dcc68427e.js"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    {% if settings.DEBUG %}<script src="http://127.0.0.1:8000/__reload__/reload.js"></script>{% endif %}
+    <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
