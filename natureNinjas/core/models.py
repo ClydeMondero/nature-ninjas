@@ -35,10 +35,14 @@ class Multimedia(models.Model):
     def __str__(self):
         return self.title
 
+from django.db import models
+
 class Activity(models.Model):
-    title = models.CharField(max_length=200)  # Title of the activity
-    description = models.TextField(blank=True)  # Description of the activity
-    file = models.FileField(upload_to="activities/", blank=True, null=True)  # Optional file for activity (e.g., PDF)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    file = models.FileField(upload_to='activities/', blank=True, null=True)
+    external_url = models.URLField(blank=True, null=True)
+    preview_image = models.ImageField(upload_to='activity_previews/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp
 
     def __str__(self):

@@ -64,7 +64,6 @@
     if ($heroVideo.length) {
       setTimeout(function () {
                 $heroVideo.prop('muted', true); // Mute the video
-
       }, 15000); // Stop video after 15 seconds
     }
   });

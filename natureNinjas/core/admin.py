@@ -15,4 +15,5 @@ class MultimediaAdmin(admin.ModelAdmin):
 
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
-    list_display = ('title', 'created_at')
+    list_display = ('title', 'external_url', 'created_at')
+    list_filter = ('created_at',)

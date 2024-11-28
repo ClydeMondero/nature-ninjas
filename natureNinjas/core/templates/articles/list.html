@@ -27,7 +27,6 @@
                                 {% if article.activity %}
                                     <p>
                                         <i class="fas fa-puzzle-piece"></i>
-                                        Activity Available
                                         <a href="{% url 'activity_detail' article.activity.id %}"
                                            class="text-white hover:underline">{{ article.activity.title }}</a>
                                     </p>
@@ -35,7 +34,6 @@
                                 {% if article.multimedia %}
                                     <p>
                                         <i class="fas fa-video"></i>
-                                        Multimedia Available
                                         <a href="{% url 'multimedia_detail' article.multimedia.id %}"
                                            class="text-white hover:underline">{{ article.multimedia.title }}</a>
                                     </p>

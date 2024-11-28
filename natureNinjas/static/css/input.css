@@ -32,6 +32,21 @@ li:hover i {
   transform: rotate(-15deg); /* Tilts the icon 15 degrees */
 }
 
+.aspect-w-16.aspect-h-9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Aspect ratio 16:9 */
+}
+
+.aspect-w-16.aspect-h-9 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 
 #header {
   transform: translateY(0); /* Default: visible */

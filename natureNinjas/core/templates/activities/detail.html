@@ -11,13 +11,23 @@
         <!-- Content -->
         <div class="text-gray-700 text-lg leading-relaxed px-4">
             <p class="mb-4">{{ activity.description }}</p>
-            {% if activity.file %}
-                <div class="text-center mt-8">
-                    <a href="{{ activity.file.url }}"
-                       target="_blank"
-                       class="px-6 py-3 bg-yellow-600 text-white font-bold hover:bg-yellow-800">Download Activity</a>
-                </div>
-            {% endif %}
         </div>
+        <!-- Game Section -->
+        {% if activity.external_url %}
+            <div class="aspect-w-16 aspect-h-9 mt-8">
+                <iframe src="{{ activity.external_url }}" 
+                        frameborder="0" 
+                        allowfullscreen 
+                        class="w-full h-full rounded shadow-md"></iframe>
+            </div>
+        {% endif %}
+        <!-- Download Section -->
+        {% if activity.file %}
+            <div class="text-center mt-8">
+                <a href="{{ activity.file.url }}"
+                   target="_blank"
+                   class="px-6 py-3 bg-yellow-600 text-white font-bold hover:bg-yellow-800">Download Activity</a>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
