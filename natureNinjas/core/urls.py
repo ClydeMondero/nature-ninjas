@@ -11,4 +11,5 @@ urlpatterns = [
     path('activities/', views.activity_list, name='activities'),
     path('activities/<int:id>/', views.activity_detail, name='activity_detail'),
     path('contact/', views.contact, name='contact'),  # Contact Us Page
+    path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
 ]
