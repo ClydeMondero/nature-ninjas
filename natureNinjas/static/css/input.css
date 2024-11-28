@@ -9,22 +9,29 @@
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the entire scrollbar */
+  width: 12px; /* Width of the entire scrollbar */
 }
 
 ::-webkit-scrollbar-track {
   background-color: #e6f7e6; /* Pastel green color for the scrollbar track */
-  border-radius: 10px; /* Rounded corners for the track */
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #b3e6b3; /* Pastel green color for the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #99d699; /* Darker pastel green color of the thumb when hovered */
 }
+
+li i{
+  transition: transform 0.3s ease; /* Smooth transition for the tilt */
+}
+
+li:hover i {
+  transform: rotate(-15deg); /* Tilts the icon 15 degrees */
+}
+
 
 #header {
   transform: translateY(0); /* Default: visible */
@@ -39,4 +46,31 @@
   background-image: url(../assets/hero.jpg);
   background-size: cover;
   background-attachment: fixed;
+}
+
+/* From Uiverse.io by absoluteSTrange */ 
+.button {
+  font-weight: 600;
+  padding: 17px 40px;
+  border: 0;
+  background-color: rgb(250 204 21) ;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  /*50, 168, 80*/
+  box-shadow: rgb(196, 159, 13) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: rgb(196, 159, 13) 0px 7px 0px 0px;
+}
+
+.button:active {
+  background-color: rgb(250 204 21);
+  /*50, 168, 80*/
+  box-shadow: rgb(196, 159, 13) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
 }
