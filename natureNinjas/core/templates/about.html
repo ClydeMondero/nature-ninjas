@@ -1,82 +1,142 @@
-{% extends 'base.html' %}
-{% load static%}
-
+{% extends "base.html" %}
+{% load static %}
 {% block title %}
 About Us
-{% endblock %}
-
+{% endblock title %}
 {% block content %}
-<div class="bg-green-50 min-h-screen max-w-auto flex flex-col items-center px-6 py-12 pb-8">
 
-    <!-- About Us Section -->
-    <div class="bg-white min-h-screen w-full flex flex-col items-center justify-center py-10 rounded-lg shadow-lg relative overflow-hidden">
-        <img src="{% static 'assets/about-hero.png' %}" alt="Chess Characters" class="absolute top-0 left-0 h-full w-full object-cover rounded-lg" >
-        <div class="bg-opacity-50 absolute top-0 left-0 h-full w-full flex flex-col items-center justify-center text-center">
-            <!-- About Us Heading -->
-            <h1 class="text-5xl md:text-6xl font-bold text-green-500">
-                About Nature Ninjas
-            </h1>
-            <!-- About Us Paragraph -->
-            <p class="text-sm max-w-3xl md:text-lg text-white md:p-10 leading-relaxed">
-                At Nature Ninjas, we are dedicated to raising awareness about 
-                climate change and promoting sustainable living. Our mission 
-                is to educate and inspire individuals to take action towards 
-                preserving our planet for future generations.
-            </p>
-            <button class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 text-white text-base sm:text-lg font-semibold rounded-full shadow-lg hover:bg-green-500 ease-in-out duration-300 transform hover:-translate-y-1 hover:scale-110 transition"
-                onclick="window.location.href='{% url 'contact' %}'">
-                Contact Us
-            </button>
-        </div>
-    </div>
-    
-    <!-- Mission Section -->
-    <div class="bg-white w-full max-w-6xl flex flex-col lg:flex-row items-center py-10 px-6 rounded-lg mt-8 shadow-lg gap-5">
-        <div class="flex flex-col items-start lg:text-left w-full lg:w-1/2 text-justify">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700 mb-4 text-center lg:text-center">
-                Our Mission
-            </h2>
-            <p class="text-base md:text-lg text-gray-700 leading-relaxed text-justify">
-                At Nature Ninjas, our mission is to promote a deep understanding 
-                of climate change and its impact on our world. We aim to empower 
-                individuals, especially young minds, through engaging educational 
-                content, practical eco-friendly solutions, and a supportive 
-                community that inspires action.
-            </p>
-        </div>
-        
-        <div class="flex justify-center w-full lg:w-1/2">
-            <img src="{% static 'assets/about-mission.jpg' %}" alt="Mission Image" class="h-auto w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-lg">
-        </div>
-    </div>
-    
-    
-    <!-- Roles Section -->
-    <div class="bg-white w-full max-w-3xl flex flex-col items-center py-10 px-6 mt-8 rounded-lg shadow-lg">
-        <h2 class="text-3xl md:text-2xl font-bold text-green-700 mb-4 text-center">✅ Nature Ninjas Role in Addressing Climate Change</h2>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed text-center">
-            Nature Ninjas takes a leading role in raising awareness and fostering 
-            understanding of climate change and sustainability. While we don't 
-            create climate policies or dictate specific solutions, 
-            we are dedicated to equipping individuals with reliable 
-            and engaging educational content about climate change.
-        </p>
+<!-- Hero Section -->
+<div class="relative w-full flex justify-center">
+  <!-- Hero Image -->
+  <div id="hero-image" class="w-full h-[750px] relative">
+    <img src="{% static 'assets/about-hero.jpg' %}" alt="Climate Hero Image"
+      class="w-full h-full object-cover rounded-lg shadow-md" />
+    <!-- Hero Text Overlay -->
+    <div
+      class="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-green-600 via-transparent to-transparent text-gray-100 px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 max-w-2xl">🤔 About Nature Ninjas</h1>
+      <p class="text-lg md:text-xl mb-6 max-w-2xl">
+        At Nature Ninjas, we are dedicated to raising awareness About
+        climate change and promoting sustainable living. Our mission
+        is to educate and inspire individuals to take action towards
+        preserving our planet for future generations.
+      </p>
+      <button
+        class="px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-300 transition">
+        💬 Contact Us
+      </button>
     </div>
 
-
-    <!-- Developers Section -->
-    <div class="bg-white w-full max-w-3xl flex flex-col items-center py-10 px-6 mt-8 rounded-lg shadow-lg">
-        <h2 class="text-3xl md:text-2xl font-bold text-green-700 mb-4 text-center">🧑🏿‍💻 Web Development Team</h2>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed text-center mb-2">
-            Clyde Reinyel C. Mondero
-        </p>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed text-center mb-2">
-            Danrick Salamat C. Macatanong
-        </p>
-        <p class="text-base md:text-lg text-gray-700 leading-relaxed text-center">
-            Andrei John V. Poma
-        </p>
-    </div>
+  </div>
 </div>
-{% endblock %}
 
+<!-- Mission Section -->
+<div class="bg-white py-8 flex flex-col lg:flex-row items-center justify-center align-middle gap-5 h-[750px]">
+  <!-- Mission Text Section -->
+   <div>
+    <div class="lg:w-1/3 px-6 text-center ">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-800 mb-4 text-center">
+        🌟 Our Mission
+      </h2>
+      <p class="text-lg md:text-lg lg:max-w-xg text-gray-500 leading-relaxed mb-4 text-center">
+        At Nature Ninjas, our mission is to promote a deep understanding of climate change
+        and its impact on our world. We aim to empower individuals, especially young minds,
+        through engaging educational content, practical eco-friendly solutions, and a
+        supportive community that inspires action.
+      </p>
+      <button
+        class="px-4 py-3 md:px-6 md:py-3 bg-blue-500 text-white text-base md:text-lg font-semibold rounded-full shadow-lg hover:bg-blue-400 transition">
+        🛡️ Privacy Policy
+      </button>
+    </div>
+   </div>
+  
+
+  <!-- Mission Image Section -->
+  <div class="lg:w-1/3 flex justify-center items-center">
+    <img src="{% static 'assets/about-mission.jpg' %}" alt="Climate Hero Image"
+      class="max-w-full h-auto rounded-lg shadow-lg">
+  </div>
+</div>
+
+<!-- Developers Section -->
+<div class="bg-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white-50">
+    <h2 class="text-3xl font-bold text-black text-center mb-8">👨‍💻 Meet the Developers</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white shadow-md rounded-lg p-6 text-center">
+        <img src="{% static 'assets/developer1.jpg' %}" alt="Developer 1" class="w-24 h-24 rounded-full mx-auto mb-4">
+        <h3 class="text-xl font-bold text-gray-600 mb-2">Clyde Reinyel C. Mondero</h3>
+        <a class="text-gray-600 hover:text-green-500" href="https://github.com/ClydeMondero" target="_blank"><i
+            class="fab fa-github"></i> ClydeMondero</a>
+
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-6 text-center">
+        <img src="{% static 'assets/poms.jpg' %}" alt="Developer 2" class="w-24 h-24 rounded-full mx-auto mb-4">
+        <h3 class="text-xl font-bold text-gray-600 mb-2">Andrei John V. Poma </h3>
+        <a class="text-gray-600 hover:text-green-500" href="https://github.com/dreiiiur" target="_blank"><i
+            class="fab fa-github"></i> dreiiiur</a>
+
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-6 text-center">
+        <img src="{% static 'assets/dan.jpg' %}" alt="Developer 3" class="w-24 h-24 rounded-full mx-auto mb-4">
+        <h3 class="text-xl font-bold text-gray-600 mb-2">Danrick Salamat C. Macatanong</h3>
+        <a class="text-gray-600 hover:text-green-500" href="https://github.com/danricckk" target="_blank"> <i
+            class="fab fa-github"></i> danricckk</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Us Section -->
+<div class="bg-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-blue-400 text-center mb-8">📩 Contact Us</h2>
+    <form action="{% url 'contact' %}" method="post"
+      class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-lg shadow-lg">
+      {% csrf_token %}
+      <!-- Container for Name -->
+      <div class="bg-white shadow-lg rounded-lg p-6 border-t-4 border-gray-50">
+        <label for="name" class="block text-2xl font-semibold text-[#89A8B2] mb-2">What's your Ninja Name?</label>
+        <input type="text" name="name" id="name" required placeholder="Enter your ninja name"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#89A8B2] focus:border-[#89A8B2]" />
+      </div>
+      <!-- Container for Email -->
+      <div class="bg-white shadow-lg rounded-lg p-6 border-t-4 border-gray-50">
+        <label for="email" class="block text-2xl font-semibold text-[#89A8B2] mb-2">What's your Ninja
+          Email?</label>
+        <input type="email" name="email" id="email" required placeholder="Enter your ninja email"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#89A8B2] focus:border-[#89A8B2]" />
+      </div>
+      <!-- Full-width Container for Message -->
+      <div class="bg-white shadow-lg rounded-lg p-6 border-t-4 border-gray-50 col-span-1 md:col-span-2">
+        <label for="message" class="block text-2xl font-semibold text-[#89A8B2] mb-2">What's your Ninja
+          Message?</label>
+        <textarea name="message" id="message" required placeholder="Write your Ninja message here..."
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#89A8B2] focus:border-[#89A8B2]"
+          rows="6"></textarea>
+      </div>
+      <!-- Submit Button -->
+      <div class="col-span-1 md:col-span-2 flex justify-center">
+        <button type="submit"
+          class="px-8 py-3 bg-green-500 text-white text-2xl font-semibold rounded-full shadow-lg hover:bg-green-600 transition-all duration-300">
+          Save the Nature!
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="bg-green-100 py-10 text-center">
+  <h3 class="text-2xl font-bold text-green-700 mb-4">🌱 Join the Climate Change Mission!</h3>
+  <p class="text-gray-600 text-lg mb-6">
+    Participate in activities, learn through games, and explore exciting
+    climate-related content.
+  </p>
+  <a href="{% url 'activities' %}"
+    class="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-400 transition">
+    🌟 Get Started
+  </a>
+</div>
+{% endblock content %}
