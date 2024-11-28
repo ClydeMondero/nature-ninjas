@@ -6,23 +6,42 @@
 {% block content %}
   <!-- Hero Section -->
   <div class="relative w-full flex justify-center">
-    <!-- Hero Image -->
-    <div id="hero-image" class="w-full h-[750px] relative">
-      <img src="{% static 'assets/hero.jpg' %}"
-           alt="Climate Hero Image"
-           class="w-full h-full object-cover rounded-lg shadow-md" />
-      <!-- Hero Text Overlay -->
-      <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-green-600 via-transparent to-transparent text-gray-100 px-4">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 max-w-2xl">🧊 Ice is Melting, What's Next?</h1>
-        <p class="text-lg md:text-xl mb-6 max-w-2xl">
-          Nature Ninjas is a fun and interactive way to teach kids about climate
-          change and saving the planet!
-        </p>
-        <button class="px-6 py-3 bg-yellow-400 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-yellow-300 transition">
-          🚀 Let's Learn! 
-        </button>
+    {% if random_multimedia %}
+      <div id="hero-video" class="w-full h-[750px] relative">
+        <video id="hero-video-element"
+               autoplay
+               loop
+               playsinline
+               controlslist="nodownload noplaybackrate nofullscreen"
+               class="w-full h-full object-cover rounded-lg shadow-md">
+          <source src="{{ random_multimedia.file.url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <!-- Hero Text Overlay -->
+        <div class="absolute inset-0 flex flex-col justify-center items-start text-left bg-gradient-to-t from-green-600 via-transparent to-transparent text-gray-100 px-8">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ random_multimedia.title }}</h1>
+          <p class="text-lg md:text-xl mb-6">{{ random_multimedia.description|truncatewords:15 }}</p>
+          <a href="{% url 'multimedia_detail' random_multimedia.id %}"
+             class="px-6 py-3 bg-red-600 text-white text-lg font-semibold shadow-lg hover:bg-red-800 transition">
+            Go Watch It!
+          </a>
+        </div>
       </div>
-    </div>
+    {% else %}
+      <!-- Fallback Hero Image -->
+      <div id="hero-image" class="w-full h-[750px] relative">
+        <img src="{% static 'assets/hero.jpg' %}"
+             alt="Climate Hero Image"
+             class="w-full h-full object-cover rounded-lg shadow-md" />
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-green-600 via-transparent to-transparent text-gray-100 px-4">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Ice is Melting, What's Next?</h1>
+          <p class="text-lg md:text-xl mb-6">
+            Nature Ninjas is a fun and interactive way to teach kids about climate
+            change and saving the planet!
+          </p>
+        </div>
+      </div>
+    {% endif %}
   </div>
   <!-- Featured Articles Section -->
   <div class="bg-blue-50 py-12">
@@ -84,7 +103,7 @@
     </div>
   </div>
   <!-- Call to Action Section -->
-  <div class="bg-yellow-50 py-12">
+  <div class="bg-yellow-50 py-12 pb-">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-yellow-400 p-4 mb-8">
         <h2 class="text-3xl font-bold text-white text-center">
