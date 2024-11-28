@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-red-600 p-4 mb-8">
+                <h2 class="text-3xl font-bold text-white text-center">
+                    <i class="fas fa-video text-3xl"></i> <span>Watch</span>
+                </h2>
+            </div>
+            {% if multimedia %}
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {% for media in multimedia %}
+                        <div class="bg-red-600 overflow-hidden hover:scale-105 transition-transform">
+                            <video controls class="w-full h-48">
+                                <source src="{{ media.file.url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="p-4 text-white">
+                                <h3 class="text-xl font-semibold mb-2">{{ media.title }}</h3>
+                                <p class="text-sm mb-4">{{ media.description|truncatewords:20 }}</p>
+                                <a href="{% url 'multimedia_detail' media.id %}"
+                                   class="font-medium hover:underline">Learn More →</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-center text-red-600">No multimedia available at the moment.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

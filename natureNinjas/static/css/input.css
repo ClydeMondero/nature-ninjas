@@ -9,17 +9,15 @@
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the entire scrollbar */
+  width: 12px; /* Width of the entire scrollbar */
 }
 
 ::-webkit-scrollbar-track {
   background-color: #e6f7e6; /* Pastel green color for the scrollbar track */
-  border-radius: 10px; /* Rounded corners for the track */
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #b3e6b3; /* Pastel green color for the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
