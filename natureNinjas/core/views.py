@@ -3,10 +3,20 @@ from django.http import HttpResponse
 from .models import Article, Multimedia, Activity
 
 # Create your views here.
+import random
+
 def home(request):
     articles = Article.objects.all().order_by('-created_at')
-    multimedia = Multimedia.objects.all().order_by('-created_at')
-    return render(request, 'home.html', {'articles': articles, 'multimedia': multimedia})
+    multimedia = Multimedia.objects.all()
+    
+    # Select a random multimedia video if available
+    random_multimedia = random.choice(multimedia) if multimedia.exists() else None
+
+    return render(request, 'home.html', {
+        'articles': articles,
+        'multimedia': multimedia,
+        'random_multimedia': random_multimedia,
+    })
 
 def about(request):
     return render(request, 'about.html')
