@@ -26,6 +26,15 @@
   background-color: #99d699; /* Darker pastel green color of the thumb when hovered */
 }
 
+li i{
+  transition: transform 0.3s ease; /* Smooth transition for the tilt */
+}
+
+li:hover i {
+  transform: rotate(-15deg); /* Tilts the icon 15 degrees */
+}
+
+
 #header {
   transform: translateY(0); /* Default: visible */
   transition: transform 0.3s ease; /* Smooth transition */

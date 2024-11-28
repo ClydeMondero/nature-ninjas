@@ -16,7 +16,7 @@
     <div class="min-h-screen flex flex-col">
       <!-- Header Section -->
       <header id="header"
-              class="w-full h-25 fixed top-0 bg-gradient-to-r from-white to-green-600 text-white p-6 shadow-md z-50">
+              class="w-full h-25 fixed top-0 bg-gradient-to-r from-white to-green-600 text-white p-6 z-50">
         <nav class="h-full flex justify-between items-center">
           <!-- Logo Section -->
           <div class="flex items-center gap-4">
@@ -26,34 +26,34 @@
           </div>
           <!-- Navigation Links -->
           <ul class="h-full flex items-center gap-10 text-lg font-semibold">
-            <li>
-              <a class="flex items-center gap-2 hover:text-yellow-300"
+            <li class="list-item" data-menu="home">
+              <a class="flex items-center gap-2 hover:text-green-600"
                  href="{% url 'home' %}">
-                <i class="fas fa-home"></i> <span>Home</span>
+                <i class="fas fa-home text-2xl"></i> <span>Home</span>
               </a>
             </li>
-            <li>
-              <a class="flex items-center gap-2 hover:text-yellow-300"
+            <li class="list-item" data-menu="explore">
+              <a class="flex items-center gap-2 hover:text-blue-600"
                  href="{% url 'articles' %}">
-                <i class="fas fa-newspaper"></i> <span>Articles</span>
+                <i class="fas fa-search text-2xl"></i> <span>Explore</span>
               </a>
             </li>
-            <li>
+            <li class="list-item" data-menu="play">
               <a class="flex items-center gap-2 hover:text-yellow-300"
                  href="{% url 'activities' %}">
-                <i class="fas fa-gamepad"></i> <span>Activities</span>
+                <i class="fas fa-puzzle-piece text-2xl"></i> <span>Play</span>
               </a>
             </li>
-            <li>
-              <a class="flex items-center gap-2 hover:text-yellow-300"
+            <li class="list-item" data-menu="watch">
+              <a class="flex items-center gap-2 hover:text-red-600"
                  href="{% url 'multimedia' %}">
-                <i class="fas fa-video"></i> <span>Multimedia</span>
+                <i class="fas fa-video text-2xl"></i> <span>Watch</span>
               </a>
             </li>
-            <li>
-              <a class="flex items-center gap-2 hover:text-yellow-300"
+            <li class="list-item" data-menu="about">
+              <a class="flex items-center gap-2 hover:text-gray-600"
                  href="{% url 'about' %}">
-                <i class="fas fa-info-circle"></i> <span>About</span>
+                <i class="fas fa-info-circle text-2xl"></i> <span>About</span>
               </a>
             </li>
           </ul>
@@ -74,7 +74,7 @@
                    class="h-12 mr-4" />
               <div>
                 <h2 class="text-xl font-bold">Nature Ninjas</h2>
-                <p class="text-sm text-gray-200">🌍 Empowering Kids to Save Our Planet!</p>
+                <p class="text-sm text-gray-200">Empowering Kids to Save Our Planet!</p>
               </div>
             </div>
             <!-- Navigation Links -->
@@ -84,16 +84,16 @@
                 <h3 class="font-semibold mb-2">Explore</h3>
                 <ul>
                   <li>
-                    <a href="{% url 'home' %}" class="hover:text-gray-300">🏠 Home</a>
+                    <a href="{% url 'home' %}" class="hover:text-gray-300">Home</a>
                   </li>
                   <li>
-                    <a href="{% url 'articles' %}" class="hover:text-gray-300">📰 Articles</a>
+                    <a href="{% url 'articles' %}" class="hover:text-gray-300">Articles</a>
                   </li>
                   <li>
-                    <a href="{% url 'activities' %}" class="hover:text-gray-300">🎮 Activities</a>
+                    <a href="{% url 'activities' %}" class="hover:text-gray-300">Activities</a>
                   </li>
                   <li>
-                    <a href="{% url 'multimedia' %}" class="hover:text-gray-300">🎥 Multimedia</a>
+                    <a href="{% url 'multimedia' %}" class="hover:text-gray-300">Multimedia</a>
                   </li>
                 </ul>
               </div>
@@ -102,16 +102,13 @@
                 <h3 class="font-semibold mb-2">About Us</h3>
                 <ul>
                   <li>
-                    <a href="#" class="hover:text-gray-300">📖 About</a>
+                    <a href="#" class="hover:text-gray-300">About</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-gray-300">📞 Contact Us</a>
+                    <a href="#" class="hover:text-gray-300">Contact Us</a>
                   </li>
                   <li>
-                    <a href="#" class="hover:text-gray-300">🔒 Privacy Policy</a>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-gray-300">❓ FAQ</a>
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
                   </li>
                 </ul>
               </div>
@@ -128,11 +125,36 @@
           </div>
           <!-- Footer Bottom -->
           <div class="mt-8 text-center text-gray-300 text-xs">
-            <p>🌱 Copyright © Nature Ninjas 2024. All Rights Reserved.</p>
+            <p>Copyright © Nature Ninjas 2024. All Rights Reserved.</p>
           </div>
         </div>
       </footer>
     </div>
+    <!-- Preloaded Audio Files -->
+    <audio id="hover-sound"
+           src="{% static 'sounds/hover-sound.mp3' %}"
+           preload="auto"
+           style="display: none"></audio>
+    <audio id="home-sound"
+           src="{% static 'sounds/home-voice.mp3' %}"
+           preload="auto"
+           style="display: none"></audio>
+    <audio id="explore-sound"
+           src="{% static 'sounds/explore-voice.mp3' %}"
+           preload="auto"
+           style="display: none"></audio>
+    <audio id="play-sound"
+           src="{% static 'sounds/play-voice.mp3' %}"
+           preload="auto"
+           style="display: none"></audio>
+    <audio id="watch-sound"
+           src="{% static 'sounds/watch-voice.mp3' %}"
+           preload="auto"
+           style="display: none"></audio>
+    <audio id="about-sound"
+           src="{% static 'sounds/about-voice.mp3' %}"
+           preload="auto"
+           style="display: none"></audio>
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/0dcc68427e.js"
             crossorigin="anonymous"></script>
