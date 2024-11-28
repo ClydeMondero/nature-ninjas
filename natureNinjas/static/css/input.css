@@ -49,3 +49,30 @@ li:hover i {
   background-size: cover;
   background-attachment: fixed;
 }
+
+/* From Uiverse.io by absoluteSTrange */ 
+.button {
+  font-weight: 600;
+  padding: 17px 40px;
+  border: 0;
+  background-color: rgb(250 204 21) ;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  /*50, 168, 80*/
+  box-shadow: rgb(196, 159, 13) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: rgb(196, 159, 13) 0px 7px 0px 0px;
+}
+
+.button:active {
+  background-color: rgb(250 204 21);
+  /*50, 168, 80*/
+  box-shadow: rgb(196, 159, 13) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
