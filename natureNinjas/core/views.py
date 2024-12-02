@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Article, Multimedia, Activity
+from .models import Article, Multimedia, Activity, Category
 
 # Create your views here.
 import random
@@ -23,8 +23,23 @@ def about(request):
 
 
 def article_list(request):
-    articles = Article.objects.all().order_by('-created_at')
-    return render(request, 'articles/list.html', {'articles': articles})
+    # Get the category ID from the query parameters
+    category_id = request.GET.get('category')
+    
+    # Filter articles based on the selected category
+    if category_id:
+        articles = Article.objects.filter(category_id=category_id)
+    else:
+        articles = Article.objects.all()
+    
+    # Fetch all categories for the dropdown
+    categories = Category.objects.all()
+    
+    return render(request, 'articles/list.html', {
+        'articles': articles,
+        'categories': categories,
+        'selected_category': category_id,  # Pass the selected category to the template
+    })
 
 def article_detail(request, slug):
     # Fetch the main article

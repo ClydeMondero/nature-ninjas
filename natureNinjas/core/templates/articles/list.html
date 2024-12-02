@@ -7,6 +7,23 @@
                     <i class="fas fa-search text-3xl"></i> <span>Explore</span>
                 </h2>
             </div>
+            <!-- Category Filter -->
+            <div class="mb-8">
+                <form method="get" id="category-filter-form" class="flex justify-end">
+                    <select name="category"
+                            class="p-4 border border-blue-600 rounded-lg bg-blue-400 text-white hover:shadow-lg focus:outline-none focus:ring focus:ring-blue-300 transition"
+                            onchange="document.getElementById('category-filter-form').submit();">
+                        <option value="">All Categories</option>
+                        {% for category in categories %}
+                            <option value="{{ category.id }}"
+                                    {% if category.id|stringformat:"s" == selected_category %}selected{% endif %}>
+                                {{ category.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+            <!-- Articles List -->
             {% if articles %}
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {% for article in articles %}
@@ -22,28 +39,11 @@
                                 <a href="{% url 'article_detail' article.slug %}"
                                    class="font-medium hover:underline">Read More →</a>
                             </div>
-                            <!-- Related Activity or Multimedia -->
-                            <div class="p-4 text-gray-200">
-                                {% if article.activity %}
-                                    <p>
-                                        <i class="fas fa-puzzle-piece"></i>
-                                        <a href="{% url 'activity_detail' article.activity.id %}"
-                                           class="text-white hover:underline">{{ article.activity.title }}</a>
-                                    </p>
-                                {% endif %}
-                                {% if article.multimedia %}
-                                    <p>
-                                        <i class="fas fa-video"></i>
-                                        <a href="{% url 'multimedia_detail' article.multimedia.id %}"
-                                           class="text-white hover:underline">{{ article.multimedia.title }}</a>
-                                    </p>
-                                {% endif %}
-                            </div>
                         </div>
                     {% endfor %}
                 </div>
             {% else %}
-                <p class="text-center text-blue-600">No articles available at the moment.</p>
+                <p class="text-center text-blue-600">No articles available for this category.</p>
             {% endif %}
         </div>
     </div>
