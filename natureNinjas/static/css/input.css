@@ -7,6 +7,10 @@
   font-optical-sizing: auto;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 12px; /* Width of the entire scrollbar */

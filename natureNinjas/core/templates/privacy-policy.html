@@ -1,66 +1,60 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-About Us
+  About Us
 {% endblock title %}
 {% block content %}
-
-<!-- Privacy Policy Section -->
-<div class="bg-white py-12">
+  <!-- Privacy Policy Section -->
+  <div class="bg-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="bg-[#454545] p-4 mb-8">
         <h2 class="text-3xl font-bold text-white text-center">
-          🛡️ Privacy Policy
+          <i class="fas fa-shield-alt"></i> Privacy Policy
         </h2>
       </div>
       <!-- Privacy Policy Content -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Privacy Policy Text -->
         <div class="bg-[#454545] p-6 text-white shadow-md hover:scale-105 transition-transform">
-          <h3 class="text-xl font-semibold mb-4 text-center">
-            🔏 Your Privacy Matters
-          </h3>
+          <h3 class="text-xl font-semibold mb-4 text-center">Your Privacy Matters</h3>
           <p class="text-base leading-relaxed mb-4">
-            At Nature Ninjas, we care about your privacy and are dedicated to keeping your personal information safe. 
-            We only collect the information we need to make your time with us fun, educational, and secure. 
+            At Nature Ninjas, we care about your privacy and are dedicated to keeping your personal information safe.
+            We only collect the information we need to make your time with us fun, educational, and secure.
             This could include things like your name or email, but we promise to keep it safe and use it responsibly.
-
-            We never share your information with strangers or use it for anything outside of Nature Ninjas. 
-            Our goal is to protect your privacy while helping you learn and grow. 
-            If you have questions or want to know more, your parents or guardians can always reach out to us. 
-            Together, we can explore, learn, and save the planet safely! 🌍
+            We never share your information with strangers or use it for anything outside of Nature Ninjas.
+            Our goal is to protect your privacy while helping you learn and grow.
+            If you have questions or want to know more, your parents or guardians can always reach out to us.
+            Together, we can explore, learn, and save the planet safely!
           </p>
-          
         </div>
         <!-- Privacy Policy Image -->
         <div class="bg-[#454545] shadow-md overflow-hidden hover:scale-105 transition-transform">
-          <img src="{% static 'assets/privacy-policy.jpg' %}" 
-               alt="Privacy Policy Image" 
+          <img src="{% static 'assets/privacy-policy.jpg' %}"
+               alt="Privacy Policy Image"
                class="w-full h-auto object-cover">
-               <p class="text-base leading-relaxed text-white px-4 py-2">
-                "Hey there, young adventurer! If you have any questions or 
-                concerns about how your information is used, just remember that you 
-                can always reach out to us through our contact form. We're here to help 
-                and protect your privacy!"
-              </p>
+          <p class="text-base leading-relaxed text-white px-4 py-2">
+            "Hey there, young adventurer! If you have any questions or
+            concerns about how your information is used, just remember that you
+            can always reach out to us through our contact form. We're here to help
+            and protect your privacy!"
+          </p>
         </div>
-        
       </div>
-      
     </div>
   </div>
-
-<!-- Call to Action Section -->
-<div class="bg-green-100 py-10 text-center">
-  <h3 class="text-2xl font-bold text-green-700 mb-4">🌱 Join the Climate Change Mission!</h3>
-  <p class="text-gray-600 text-lg mb-6">
-    Participate in activities, learn through games, and explore exciting
-    climate-related content.
-  </p>
-  <a href="{% url 'activities' %}"
-    class="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-400 transition">
-    🌟 Get Started
-  </a>
-</div>
+  <!-- Call to Action Section -->
+  <div class="bg-green-100 py-10 text-center">
+    <h3 class="text-2xl font-bold text-green-700 mb-4">
+      <i class="fas fa-leaf"></i> Join the Climate Change Mission!
+    </h3>
+    <p class="text-gray-600 text-lg mb-6">
+      Participate in activities, learn through games, and explore exciting
+      climate-related content.
+    </p>
+    <a href="{% url 'home' %}"
+       class="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-400 transition">
+      <i class="fas fa-star text-yellow-400"></i> Get Started
+    </a>
+  </div>
 {% endblock content %}

@@ -1,180 +1,187 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-About Us
+  About Us
 {% endblock title %}
 {% block content %}
-
-<!-- Hero Section -->
-<div class="relative w-full flex justify-center">
-  <!-- Hero Image -->
-  <div id="hero-image" class="w-full h-[750px] relative">
-    <img src="{% static 'assets/about-hero.jpg' %}" alt="Climate Hero Image"
-      class="w-full h-full object-cover rounded-lg shadow-md" />
-    <!-- Hero Text Overlay -->
-    <div
-      class="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-green-600 via-transparent to-transparent text-gray-100 px-4">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 max-w-2xl">🤔 About Nature Ninjas</h1>
-      <p class="text-lg md:text-xl mb-6 max-w-2xl">
-        At Nature Ninjas, we are dedicated to raising awareness About
-        climate change and promoting sustainable living. Our mission
-        is to educate and inspire individuals to take action towards
-        preserving our planet for future generations.
-      </p>
-      <button
-        class="px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-300 transition">
-        💬 Contact Us
-      </button>
-    </div>
-
-  </div>
-</div>
-
-<!-- Mission Section -->
-<div class="bg-white py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
-    <div class="bg-[#A6AEBF] p-4 mb-8">
-      <h2 class="text-3xl font-bold text-white text-center">
-        🌟 Our Mission
-      </h2>
-    </div>
-    <!-- Mission Content -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <!-- Mission Text -->
-      <div class="bg-[#A6AEBF] p-6 text-white shadow-md hover:scale-105 transition-transform">
-        <h3 class="text-xl font-semibold mb-4 text-center">
-          Why We Exist
-        </h3>
-        <p class="text-base leading-relaxed mb-4">
-          At Nature Ninjas, our mission is to promote a deep understanding of climate change
-          and its impact on our world. We aim to empower individuals, especially young minds,
-          through engaging educational content, practical eco-friendly solutions, and a
-          supportive community that inspires action.
+  <!-- Hero Section -->
+  <div class="relative w-full flex justify-center">
+    <!-- Hero Image -->
+    <div id="hero-image" class="w-full h-[750px] relative">
+      <img src="{% static 'assets/about-hero.jpg' %}"
+           alt="Climate Hero Image"
+           class="w-full h-full object-cover rounded-lg shadow-md" />
+      <!-- Hero Text Overlay -->
+      <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-gradient-to-t from-green-600 via-transparent to-transparent text-gray-100 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 max-w-2xl">About Nature Ninjas</h1>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl">
+          At Nature Ninjas, we are dedicated to raising awareness About
+          climate change and promoting sustainable living. Our mission
+          is to educate and inspire individuals to take action towards
+          preserving our planet for future generations.
         </p>
-        <div class="text-center">
-          <a href="{% url 'privacy-policy' %}"
-             class="inline-block px-4 py-3 bg-[#61677A] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#61677A] transition">
-            🛡️ Privacy Policy
-          </a>
-        </div>
-      </div>
-      <!-- Mission Image -->
-      <div class="bg-blue-600 shadow-md overflow-hidden hover:scale-105 transition-transform">
-        <img src="{% static 'assets/about-mission.jpg' %}" 
-             alt="Climate Hero Image" 
-             class="w-full h-auto object-cover">
+        <a href="#contact-us"
+           class="px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-300 transition">
+          Contact Us
+        </a>
       </div>
     </div>
   </div>
-</div>
-
-
-<!-- Developers Section -->
-<div class="bg-white py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="bg-[#89A8B2] p-4 mb-8">
-      <h2 class="text-3xl font-bold text-white text-center">
-        👨‍💻 Meet the Developers
-      </h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Developer Card -->
-      <div class="bg-[#E9EFEC] shadow-md overflow-hidden hover:scale-105 transition-transform">
-        <div class="p-6 text-center">
-          <img src="{% static 'assets/clyde.jpg' %}" alt="Developer 1"
-               class="w-24 h-24 rounded-full mx-auto mb-4">
-          <h3 class="text-xl font-semibold text-[#89A8B2] mb-2">Clyde Reinyel C. Mondero</h3>
-          <a class="text-sm font-medium text-[#89A8B2] hover:text-blue-400" 
-             href="https://github.com/ClydeMondero" target="_blank">
-            <i class="fab fa-github"></i> ClydeMondero
-          </a>
-        </div>
+  <!-- Mission Section -->
+  <div class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="bg-[#A6AEBF] p-4 mb-8">
+        <h2 class="text-3xl font-bold text-white text-center">
+          <i class="fas fa-star"></i> Our Mission
+        </h2>
       </div>
-
-      <!-- Developer Card -->
-      <div class="bg-[#E9EFEC] shadow-md overflow-hidden hover:scale-105 transition-transform">
-        <div class="p-6 text-center">
-          <img src="{% static 'assets/poms.jpg' %}" alt="Developer 2"
-               class="w-24 h-24 rounded-full mx-auto mb-4">
-          <h3 class="text-xl font-semibold text-[#89A8B2] mb-2">Andrei John V. Poma</h3>
-          <a class="text-sm font-medium text-[#89A8B2] hover:text-blue-400" 
-             href="https://github.com/dreiiiur" target="_blank">
-            <i class="fab fa-github"></i> dreiiiur
-          </a>
+      <!-- Mission Content -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Mission Text -->
+        <div class="bg-[#A6AEBF] p-6 text-white shadow-md hover:scale-105 transition-transform">
+          <h3 class="text-xl font-semibold mb-4 text-center">Why We Exist</h3>
+          <p class="text-base leading-relaxed mb-4">
+            At Nature Ninjas, our mission is to promote a deep understanding of climate change
+            and its impact on our world. We aim to empower individuals, especially young minds,
+            through engaging educational content, practical eco-friendly solutions, and a
+            supportive community that inspires action.
+          </p>
+          <div class="text-center">
+            <a href="{% url 'privacy-policy' %}"
+               class="inline-block px-4 py-3 bg-[#61677A] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#61677A] transition">
+              <i class="fas fa-shield-alt"></i> Privacy Policy
+            </a>
+          </div>
         </div>
-      </div>
-
-      <!-- Developer Card -->
-      <div class="bg-[#E9EFEC] shadow-md overflow-hidden hover:scale-105 transition-transform">
-        <div class="p-6 text-center">
-          <img src="{% static 'assets/dan.jpg' %}" alt="Developer 3"
-               class="w-24 h-24 rounded-full mx-auto mb-4">
-          <h3 class="text-xl font-semibold text-[#89A8B2] mb-2">Danrick Salamat C. Macatanong</h3>
-          <a class="text-sm font-medium text-[#89A8B2] hover:text-blue-400" 
-             href="https://github.com/danricckk" target="_blank">
-            <i class="fab fa-github"></i> danricckk
-          </a>
+        <!-- Mission Image -->
+        <div class="bg-blue-600 shadow-md overflow-hidden hover:scale-105 transition-transform">
+          <img src="{% static 'assets/about-mission.jpg' %}"
+               alt="Climate Hero Image"
+               class="w-full h-auto object-cover">
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
-<!-- Contact Us Section -->
-<div class="bg-white py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
-    <div class="bg-[#85A98F] p-4 mb-8">
-      <h2 class="text-3xl font-bold text-white text-center">
-        📩 Contact Us
-      </h2>
+  <!-- Developers Section -->
+  <div class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-[#89A8B2] p-4 mb-8">
+        <h2 class="text-3xl font-bold text-white text-center">
+          <i class="fas fa-laptop-code"></i> Meet the Developers
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Developer Card -->
+        <div class="bg-[#E9EFEC] shadow-md overflow-hidden hover:scale-105 transition-transform">
+          <div class="p-6 text-center">
+            <img src="{% static 'assets/clyde.jpg' %}"
+                 alt="Developer 1"
+                 class="w-24 h-24 rounded-full mx-auto mb-4">
+            <h3 class="text-xl font-semibold text-[#89A8B2] mb-2">Clyde Reinyel C. Mondero</h3>
+            <a class="text-sm font-medium text-[#89A8B2] hover:text-blue-400"
+               href="https://github.com/ClydeMondero"
+               target="_blank">
+              <i class="fab fa-github"></i> ClydeMondero
+            </a>
+          </div>
+        </div>
+        <!-- Developer Card -->
+        <div class="bg-[#E9EFEC] shadow-md overflow-hidden hover:scale-105 transition-transform">
+          <div class="p-6 text-center">
+            <img src="{% static 'assets/poms.jpg' %}"
+                 alt="Developer 2"
+                 class="w-24 h-24 rounded-full mx-auto mb-4">
+            <h3 class="text-xl font-semibold text-[#89A8B2] mb-2">Andrei John V. Poma</h3>
+            <a class="text-sm font-medium text-[#89A8B2] hover:text-blue-400"
+               href="https://github.com/dreiiiur"
+               target="_blank">
+              <i class="fab fa-github"></i> dreiiiur
+            </a>
+          </div>
+        </div>
+        <!-- Developer Card -->
+        <div class="bg-[#E9EFEC] shadow-md overflow-hidden hover:scale-105 transition-transform">
+          <div class="p-6 text-center">
+            <img src="{% static 'assets/dan.jpg' %}"
+                 alt="Developer 3"
+                 class="w-24 h-24 rounded-full mx-auto mb-4">
+            <h3 class="text-xl font-semibold text-[#89A8B2] mb-2">Danrick Salamat C. Macatanong</h3>
+            <a class="text-sm font-medium text-[#89A8B2] hover:text-blue-400"
+               href="https://github.com/danricckk"
+               target="_blank">
+              <i class="fab fa-github"></i> danricckk
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Contact Form -->
-    <form method="post" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% csrf_token %}
-      <!-- Ninja Name Field -->
-      <div class="bg-[#85A98F] p-6 rounded-lg shadow-md text-white hover:scale-105 transition-transform">
-        <label for="name" class="block text-xl font-semibold mb-2">Ninja Name</label>
-        <input type="text" name="name" id="name" required placeholder="Enter your ninja name"
-          class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-      </div>
-      <!-- Ninja Email Field -->
-      <div class="bg-[#85A98F] p-6 rounded-lg shadow-md text-white hover:scale-105 transition-transform">
-        <label for="email" class="block text-xl font-semibold mb-2">Ninja Email</label>
-        <input type="email" name="email" id="email" required placeholder="Enter your ninja email"
-          class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-      </div>
-      <!-- Ninja Message Field -->
-      <div class="bg-[#85A98F] p-6 rounded-lg shadow-md text-white hover:scale-105 transition-transform lg:col-span-3">
-        <label for="message" class="block text-xl font-semibold mb-2">Ninja Message</label>
-        <textarea name="message" id="message" required placeholder="Write your ninja message here..."
-          class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          rows="6"></textarea>
-      </div>
-      <!-- Submit Button -->
-      <div class="lg:col-span-3 flex justify-center">
-        <button type="submit"
-          class="px-8 py-3 bg-[#697565] text-white text-lg font-semibold rounded-full shadow-lg hover:bg-[#85A98F] transition-transform">
-          Send Message
-        </button>
-      </div>
-    </form>
   </div>
-</div>
-
-
-<!-- Call to Action Section -->
-<div class="bg-green-100 py-10 text-center">
-  <h3 class="text-2xl font-bold text-green-700 mb-4">🌱 Join the Climate Change Mission!</h3>
-  <p class="text-gray-600 text-lg mb-6">
-    Participate in activities, learn through games, and explore exciting
-    climate-related content.
-  </p>
-  <a href="{% url 'activities' %}"
-    class="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-400 transition">
-    🌟 Get Started
-  </a>
-</div>
+  <!-- Contact Us Section -->
+  <div id="contact-us" class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="bg-[#85A98F] p-4 mb-8">
+        <h2 class="text-3xl font-bold text-white text-center">
+          <i class="fas fa-envelope"></i> Contact Us
+        </h2>
+      </div>
+      <!-- Contact Form -->
+      <form method="post"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% csrf_token %}
+        <!-- Ninja Name Field -->
+        <div class="bg-[#85A98F] p-6 rounded-lg shadow-md text-white hover:scale-105 transition-transform">
+          <label for="name" class="block text-xl font-semibold mb-2">Ninja Name</label>
+          <input type="text"
+                 name="name"
+                 id="name"
+                 required
+                 placeholder="Enter your ninja name"
+                 class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+        <!-- Ninja Email Field -->
+        <div class="bg-[#85A98F] p-6 rounded-lg shadow-md text-white hover:scale-105 transition-transform">
+          <label for="email" class="block text-xl font-semibold mb-2">Ninja Email</label>
+          <input type="email"
+                 name="email"
+                 id="email"
+                 required
+                 placeholder="Enter your ninja email"
+                 class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+        <!-- Ninja Message Field -->
+        <div class="bg-[#85A98F] p-6 rounded-lg shadow-md text-white hover:scale-105 transition-transform lg:col-span-3">
+          <label for="message" class="block text-xl font-semibold mb-2">Ninja Message</label>
+          <textarea name="message"
+                    id="message"
+                    required
+                    placeholder="Write your ninja message here..."
+                    class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    rows="6"></textarea>
+        </div>
+        <!-- Submit Button -->
+        <div class="lg:col-span-3 flex justify-center">
+          <button type="submit"
+                  class="px-8 py-3 bg-[#697565] text-white text-lg font-semibold rounded-full shadow-lg hover:bg-[#85A98F] transition-transform">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Call to Action Section -->
+  <div class="bg-green-100 py-10 text-center">
+    <h3 class="text-2xl font-bold text-green-700 mb-4">
+      <i class="fas fa-leaf"></i> Join the Climate Change Mission!
+    </h3>
+    <p class="text-gray-600 text-lg mb-6">
+      Participate in activities, learn through games, and explore exciting
+      climate-related content.
+    </p>
+    <a href="{% url 'home' %}"
+       class="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-blue-400 transition">
+      <i class="fas fa-star text-yellow-400"></i> Get Started
+    </a>
+  </div>
 {% endblock content %}

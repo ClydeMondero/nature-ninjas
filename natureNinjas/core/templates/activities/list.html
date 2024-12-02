@@ -13,28 +13,27 @@
                     {% for activity in activities %}
                         <div class="bg-yellow-400 overflow-hidden hover:scale-105 transition-transform">
                             <div class="p-4 text-white">
-                                <h3 class="text-xl font-semibold mb-2">{{ activity.title }}</h3>
+                                <!-- Title as a clickable link -->
+                                <h3 class="text-xl font-semibold mb-2">
+                                    <a href="{% url 'activity_detail' activity.id %}"
+                                       class="hover:underline">{{ activity.title }}</a>
+                                </h3>
                                 <p class="text-sm mb-4">{{ activity.description|truncatewords:20 }}</p>
-                                {% if activity.external_url %}
-                                    <div class="game-preview text-center mt-8">
-                                        <!-- Game Preview Image -->
-                                        {% if activity.preview_image %}
+                                <div class="game-preview text-center mt-8">
+                                    <!-- Game Preview Image -->
+                                    {% if activity.preview_image %}
+                                        <a href="{% url 'activity_detail' activity.id %}">
                                             <img src="{{ activity.preview_image.url }}"
                                                  alt="Game Preview"
                                                  class="w-60 mx-auto mb-4 rounded shadow-md">
-                                        {% endif %}
-                                        <!-- Redirect Button -->
-                                        <a href="{{ activity.external_url }}"
-                                           target="_blank"
-                                           class="px-6 py-3 bg-yellow-600 text-white font-bold hover:bg-yellow-800">
-                                            Play Now
                                         </a>
-                                    </div>
-                                {% elif activity.file %}
-                                    <a href="{{ activity.file.url }}"
-                                       target="_blank"
-                                       class="font-medium hover:underline">Download Activity →</a>
-                                {% endif %}
+                                    {% endif %}
+                                    <!-- Redirect to Detail Page Button -->
+                                    <a href="{% url 'activity_detail' activity.id %}"
+                                       class="px-6 py-3 bg-yellow-600 text-white font-bold hover:bg-yellow-800">
+                                        View Details
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
