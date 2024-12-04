@@ -16,6 +16,9 @@ class Article(models.Model):
     multimedia = models.ForeignKey(
         'Multimedia', on_delete=models.SET_NULL, null=True, blank=True, related_name='articles'
     )
+    category = models.ForeignKey(
+        'Category', on_delete=models.SET_NULL, null=True, blank=True, related_name='articles'
+    )
 
     def save(self, *args, **kwargs):
         # Automatically generate slug from title if not set
@@ -47,3 +50,15 @@ class Activity(models.Model):
 
     def __str__(self):
         return self.title
+
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True)  # Unique category name
+    slug = models.SlugField(unique=True, blank=True)      # SEO-friendly URL
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)  # Automatically generate slug from the name
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name

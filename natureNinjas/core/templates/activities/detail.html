@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container mx-auto py-12 max-w-screen-lg">
-        <div class="bg-yellow-600 p-4 mb-8">
+        <div class="bg-yellow-400 p-4 mb-8">
             <h2 class="text-3xl font-bold text-white text-center">
-                <i class="fas fa-puzzle-piece text-3xl"></i> <span>Play & Learn</span>
+                <i class="fas fa-puzzle-piece text-3xl"></i> <span>Play</span>
             </h2>
         </div>
         <!-- Header -->
-        <h1 class="text-4xl font-bold text-yellow-600 text-center mb-6">{{ activity.title }}</h1>
+        <h1 class="text-4xl font-bold text-yellow-400 text-center mb-6">{{ activity.title }}</h1>
         <!-- Content -->
         <div class="text-gray-700 text-lg leading-relaxed px-4">
-            <p class="mb-4">{{ activity.description }}</p>
+            <p class="mb-4 text-center">{{ activity.description }}</p>
         </div>
         <!-- Game Section -->
         {% if activity.external_url %}
-            <div class="aspect-w-16 aspect-h-9 mt-8">
-                <iframe src="{{ activity.external_url }}" 
-                        frameborder="0" 
-                        allowfullscreen 
-                        class="w-full h-full rounded shadow-md"></iframe>
+            <div class="flex justify-center mt-8">
+                <iframe src="{{ activity.external_url }}"
+                        allowfullscreen
+                        scrolling="no"
+                        class="w-full shadow-lg border-2 border-yellow-400 rounded"
+                        style="width: 800px;
+                               height: 600px;
+                               border: 0;
+                               margin: 0;
+                               padding: 0">
+                </iframe>
             </div>
         {% endif %}
         <!-- Download Section -->
@@ -26,7 +32,9 @@
             <div class="text-center mt-8">
                 <a href="{{ activity.file.url }}"
                    target="_blank"
-                   class="px-6 py-3 bg-yellow-600 text-white font-bold hover:bg-yellow-800">Download Activity</a>
+                   class="px-6 py-3 bg-yellow-600 text-white font-bold hover:bg-yellow-800 rounded shadow">
+                    Download Activity
+                </a>
             </div>
         {% endif %}
     </div>
