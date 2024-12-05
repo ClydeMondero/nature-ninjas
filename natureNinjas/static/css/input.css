@@ -93,3 +93,31 @@ li:hover i {
   transform: translateY(5px);
   transition: 200ms;
 }
+
+.detail-bg{
+  background-image: url(../assets/zig-zag.png);
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+}
+
+.articles-bg{
+  background-image: url(../assets/bermuda-traingle.png);
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+}
+
+.activities-bg{
+  background-image: url(../assets/bermuda-circle.png);
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+}
+
+.multimedia-bg{
+  background-image: url(../assets/bermuda-square.png);
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+}

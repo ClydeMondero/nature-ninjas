@@ -6,8 +6,8 @@ from .models import Article, Multimedia, Activity, Category
 import random
 
 def home(request):
-    articles = Article.objects.all().order_by('-created_at')
-    multimedia = Multimedia.objects.all()
+    articles = Article.objects.all().order_by('-created_at')[:3]
+    multimedia = Multimedia.objects.all()[:3]
     
     # Select a random multimedia video if available
     random_multimedia = random.choice(multimedia) if multimedia.exists() else None
@@ -17,7 +17,6 @@ def home(request):
         'multimedia': multimedia,
         'random_multimedia': random_multimedia,
     })
-
 def about(request):
     return render(request, 'about.html')
 
